@@ -1,0 +1,4 @@
+"C:/Program Files (x86)/PowerShield/Link Server/Database/Link.fdb"
+"C:/Program Files (x86)/PowerShield/Link Server/Reports/"
+"01.10.2020"
+"30.10.2020"
