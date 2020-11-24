@@ -13,7 +13,6 @@ def discharge_list(start, end):
              "a.C_29_F3 as Sitename,"
              "a.C_29_F1 as Del,"
              "a.PKEY as Sitenum,"
-             #"--,b.C_12_F8 as Strings"
              "c.C_10_F2 as StartDate,"
              "c.C_10_F3 as Mode "
              "from C_29 a join C_12 b on C_12_F1 = a.PKEY "
@@ -92,7 +91,7 @@ def discharge_activity(start, end, name, id_number):
     return query
 
 
-def discharge_report(name, id, strings, timestamp):
+def discharge_report(name, id_number, strings, timestamp):
     timestamp_dot = timestamp.replace('/', '.')
     strings_csv = ''
     strings_eng = ''
@@ -120,11 +119,11 @@ def discharge_report(name, id, strings, timestamp):
              "'1'," + "\n"
              f"'{timestamp_dot}'," + "\n"
              f"'{timestamp_dot}'," + "\n"
-             f"'{id}'," + "\n"
+             f"'{id_number}'," + "\n"
              "'[Report] " + "\n"
              f"Start={timestamp} " + "\n"
              f"End={timestamp} " + "\n"
-             f"B1000={id} " + "\n"
+             f"B1000={id_number} " + "\n"
              "[DischargeReport] " + "\n"
              "Group=0 " + "\n"
              f"MBStrings={strings_csv} " + "\n"
