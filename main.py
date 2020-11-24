@@ -208,7 +208,7 @@ def instructions():
     ttk.Label(window, text="5. Choose the 'From Date' and 'To Date' for the reports").pack(anchor=W, padx=10)
     ttk.Label(window, text="6. Pick the category of 'Reports' to generate").pack(anchor=W, padx=10)
     ttk.Label(window, text="7. Click 'Generate Reports'").pack(anchor=W, padx=10)
-    ttk.Label(window, text="8. Reports folder will open and reports will be generated'").pack(anchor=W, padx=10)
+    ttk.Label(window, text="8. Reports folder will open and reports will be generated").pack(anchor=W, padx=10)
     ttk.Button(window, text="Close", command=window.destroy).pack(anchor='center', padx=10, pady=10)
 
 
