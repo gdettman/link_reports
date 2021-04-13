@@ -199,3 +199,36 @@ def string_history(start, end, strings, name, id_number):
             "''," + "\n"
             "'');")
     return query
+
+def alarm_history(start, end, name, id_number):
+    start_slash = start.replace('.', '/')
+    end_slash = end.replace('.', '/')
+    query = ("INSERT INTO C_47 (DERIVED_, PKEY, C_47_F1, C_47_F2, C_47_F3, C_47_F4, C_47_F5, C_47_F6, C_47_F7, "
+             "C_47_F8, C_47_F9, C_47_F10, C_47_F11, C_47_F12, C_47_F13, C_47_F14) VALUES (" + "\n"
+             "'47'," + "\n"
+             "GEN_ID(GEN_C_47, 1)," + "\n"
+             "'ADMIN'," + "\n"
+             "'1'," + "\n"
+             "'NOW'," + "\n"
+             "'0'," + "\n"
+             "'30.12.1899 00:00:00'," + "\n"
+             f"'Alarm History - {name} - {start_slash} to {end_slash} - DS'," + "\n" 
+             "'9'," + "\n" 
+             f"'{start} 00:00:00'," + "\n"
+             f"'{end} 23:59:59'," + "\n"
+             "'0'," + "\n"
+             "'[Report]" + "\n"
+             f"Start={start_slash}" + "\n"
+             f"End={end_slash}" + "\n"
+             f"B1000={id_number}" + "\n"
+             "[SystemAlarmHistoryReport]" + "\n"
+             "Temperature type=0" + "\n"
+             "RawDataFormat=No" + "\n"
+             "Group=0" + "\n"
+             "ByString=No" + "\n"
+             "IgnoreShort=No" + "\n"
+             "'," + "\n"
+             "'30.12.1899, 00:00:00'," + "\n"
+             "''," + "\n"
+             "'');")
+    return query

@@ -26,7 +26,7 @@ from_date = StringVar(value=config[2])
 to_date = StringVar(value=config[3])
 systems = {}  # initialise systems dictionary (k = name, v = id number)
 strings = {}  # initialise strings dictionary (k = id number, v = number of strings)
-reports = ["Discharge Summary", "Discharge Activity", "Discharge Report", "String History"]
+reports = ["Discharge Summary", "Discharge Activity", "Discharge Report", "String History", "Alarm History"]
 
 
 # Sets database path
@@ -184,6 +184,12 @@ def generate_reports():
                                               systems[name]))
             connection.commit()
 
+    """Get Alarm History Reports"""
+    if "Alarm History" in report_names:
+        for name in system_names:
+            cursor.execute(sql.alarm_history(get_from_date(), get_to_date(), name, systems[name]))
+            connection.commit()
+
     connection.close()
     os.startfile(reports_path.get())
     set_config()
@@ -251,14 +257,14 @@ ttk.Button(frame, text='...', width=5, command=set_date_to).grid(column=3, row=5
 
 """Reports listbox"""
 ttk.Label(frame, text='Reports').grid(column=4, row=4, rowspan=2, padx=5, sticky=(N, S, E))
-reports_listbox = Listbox(frame, selectmode=EXTENDED, exportselection=0, width=25, height=4)
+reports_listbox = Listbox(frame, selectmode=EXTENDED, exportselection=0, width=25, height=5)
 reports_listbox.grid(column=6, row=4, sticky=(N, E, W), columnspan=2, rowspan=2, pady=10)
 for report in reports:
     reports_listbox.insert(END, report)
 ttk.Label(frame, text='    ').grid(column=9, row=4)  # white space for aesthetics
 
 """Generate button"""
-ttk.Button(frame, text='Generate Reports', command=generate_reports).grid(column=3, row=7, columnspan=2,
+ttk.Button(frame, text='Generate Reports', command=generate_reports).grid(column=3, row=8, columnspan=2,
                                                                           pady=10, sticky=W)
 
 """Menu"""
