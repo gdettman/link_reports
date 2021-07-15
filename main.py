@@ -100,6 +100,7 @@ def get_to_date():
 
 # Connect button, populates system listbox and gets string numbers in background
 def connect_to_database():
+    systems_unsorted = {}
     """Reset system listbox"""
     systems_listbox.delete(0, END)
 
@@ -112,10 +113,13 @@ def connect_to_database():
     """Get system names, store in systems dictionary"""
     cursor.execute(sql.system_list())
     system_list = cursor.fetchall()
+
     for system in system_list:
         systems[system[1]] = system[0]
-    for items in systems.keys():
+
+    for items in dict(sorted(systems.items())):
         systems_listbox.insert(END, items)
+
     systems_listbox.select_set(0, END)
     reports_listbox.select_set(0, END)
 
