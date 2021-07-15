@@ -18,6 +18,12 @@ for line in config_file:
     config.append(line.rstrip('\n'))
 config_file.close()
 
+# List of system names to ignore in ignore.txt
+ignore = []
+ignore_file = open('ignore.txt', 'r')
+for line in ignore_file:
+    ignore.append(line.rstrip('\n'))
+ignore_file.close()
 
 # Parameters
 database_path = StringVar(value=config[0])
@@ -114,8 +120,13 @@ def connect_to_database():
     cursor.execute(sql.system_list())
     system_list = cursor.fetchall()
 
+    """Filter systems by ignore list and then add them to system dictionary"""
     for system in system_list:
-        systems[system[1]] = system[0]
+        if system[1] in ignore:
+            print(system)
+            continue
+        else:
+            systems[system[1]] = system[0]
 
     for items in dict(sorted(systems.items())):
         systems_listbox.insert(END, items)

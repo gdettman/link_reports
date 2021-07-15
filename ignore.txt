@@ -1,0 +1,32 @@
+BB08-BAT-710101A
+Broadwater FCS Batt Bank 1(Delet
+Broadwater FCS Batt Bank 2(Delet
+VCA
+Harry FCS Batt Bank 2
+Jammat FCS Battery Bank 1
+Jammat FCS Battery Bank 2
+Jammat FCS Battery Cabinet 2
+Jammat FCS battery Cabinet 1
+Kate FCS Batt Bank 1
+Kate FCS Batt Bank 2
+Kate FCS Battery Bank 1
+Kate FCS Battery Bank 2
+Kenya East FCS Battery Bank 1
+Kenya East FCS Battery Bank 2
+Kenya East FCS Battery Bank A
+Kenya East FCS Battery Bank B
+Lauren FCS
+Lauren FCS Batt Bank 1
+Lauren FCS Batt Bank 2
+Lauren FCS Battery Bank 1
+Lauren FCS Battery Bank 2
+Matilda John FCS Batt Bank 1
+Matilda John FCS Battery Bank 1
+Matilda John FCS Battery Bank 2
+Matilda john FCS
+MatildaJohn FCS Batt Bank 2
+McNulty FCS Batt Bank 1
+McNulty FCS Batt Bank 2
+McNulty FCS Battery Bank 1
+McNulty FCS Battery Bank 2
+Ruby jo FCS Batt Bank 1
